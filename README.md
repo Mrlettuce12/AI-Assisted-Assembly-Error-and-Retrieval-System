@@ -42,23 +42,31 @@ Data & Storage Layer (Database/)
 - Duplicate detection and record deletion logic
 - Storage and retrieval of snag reference photographs
 
-  Getting Started -
+  ### Getting Started -
 
   New contributors and developers should review the system setup requirements below before running the application locally.
 
-  Prerequisites -
+  ### Prerequisites -
   
   - Python 3.10+ runtime environment
   - Standard shop-floor hardware (runs fully on CPU without cloud connectivity)
   
-  Setup Order -
 
-    1. Clone the repository to your local machine.
-    2. Install dependencies:
+  ### Setup Order
 
-       pip install -r requirements.txt
+1. **Clone the repository to your local machine:**
+   ```bash
+   git clone [https://github.com/your-username/ALH-Defect-Management.git](https://github.com/your-username/ALH-Defect-Management.git)
+   cd ALH-Defect-Management
+   ```
 
-  3. Ensure model files are located in Requirements/models/all-MiniLM-L6-v2/
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Ensure model files are located in:**
+   [`Requirements/models/all-MiniLM-L6-v2/`](./Requirements/models/all-MiniLM-L6-v2/)
 
   Development Workflow -
   
