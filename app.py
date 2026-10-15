@@ -15,13 +15,41 @@ from openpyxl.drawing.image import Image as OpenpyxlImage
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, 'Database', 'alh_errors.db')
-MODEL_PATH = os.path.join(BASE_DIR, 'Requirements', 'models', 'all-MiniLM-L6-v2')
+MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 CACHE_PATH = os.path.join(BASE_DIR, 'Database', 'vectors.pkl')
 
+def init_db():
+    db_dir = os.path.dirname(DB_PATH)
+    if not os.path.exists(db_dir):
+        os.makedirs(db_dir)
+
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS assembly_errors (
+            Error_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Date TEXT,
+            Component_Ref TEXT,
+            Error_Type TEXT,
+            Description TEXT,
+            Corrective_Action TEXT,
+            Technician_ID TEXT,
+            Status TEXT,
+            Image BLOB
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+# Run database setup on startup
+init_db()
 
 @st.cache_resource
 def load_model():
-    return SentenceTransformer(MODEL_PATH)
+    local_path = os.path.join(BASE_DIR, 'Requirements', 'models', 'all-MiniLM-L6-v2')
+    if os.path.exists(local_path):
+        return SentenceTransformer(local_path)
+    return SentenceTransformer(MODEL_NAME)
 
 
 @st.cache_resource
