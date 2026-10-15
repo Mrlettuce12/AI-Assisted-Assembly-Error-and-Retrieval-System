@@ -23,14 +23,14 @@ ALH-Defect-Management/
 
 ### [NLP & Vector Engine (`nlp_engine.py`)](./nlp_engine.py)
 
-- Responsible for:Sentence-Transformers Integration (all-MiniLM-L6-v2)   
+- Responsible for Sentence-Transformers Integration (all-MiniLM-L6-v2)   
 - 84-dimensional dense text embedding generation   
 - Real-time cosine similarity matrix calculation   
 - Vector cache creation and serialization via pickle
 
 ### [Data & Storage Layer -
 
-- Responsible for:SQLite local database schema & relational storage
+- Responsible for SQLite local database schema & relational storage
 - Pre-populated seed datasets for helicopter assembly snags.
 - Duplicate detection and record deletion logic.
 - Storage and retrieval of snag reference photographs.
