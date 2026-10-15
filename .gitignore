@@ -1,0 +1,20 @@
+# IDE & Virtual Environments
+.idea/
+.venv/
+__pycache__/
+
+# Large Model Binaries
+Requirements/models/
+
+# Database Files & Caches
+Database/alh_errors.db
+Database/vectors.pkl
+data/
+
+# Personal Docs & Temp Files
+*.pdf
+proj expl1
+check_paths.py
+Dashboard_Launcher
+update_db.py
+main.py
