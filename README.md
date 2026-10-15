@@ -28,12 +28,12 @@ ALH-Defect-Management/
 - Real-time cosine similarity matrix calculation   
 - Vector cache creation and serialization via pickle
 
-### [Data & Storage Layer (`Database/`)](./Database/)
+### [Data & Storage Layer -
 
 - Responsible for:SQLite local database schema & relational storage
-- Pre-populated seed datasets for helicopter assembly snags[cite: 1]
-- Duplicate detection and record deletion logic
-- Storage and retrieval of snag reference photographs
+- Pre-populated seed datasets for helicopter assembly snags.
+- Duplicate detection and record deletion logic.
+- Storage and retrieval of snag reference photographs.
 
   ### Getting Started -
 
