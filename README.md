@@ -6,19 +6,18 @@ The objective is to replace friction-heavy, paper-and-spreadsheet defect logging
 
 REPOSITORY STRUCTURE -
 
+```text
 ALH-Defect-Management/
-│
 ├── Database/
 │   ├── alh_errors.db         # SQLite relational database for logs & images
 │   └── vectors.pkl           # Cached Sentence-BERT vector embeddings
-│
 ├── Requirements/
 │   └── models/               # Offline transformer model files
 │       └── all-MiniLM-L6-v2/
-│
 ├── app.py                    # Twin-Tab Streamlit UI & export pipeline
 ├── nlp_engine.py             # Vector generation and cosine similarity engine
 └── requirements.txt          # Python runtime dependencies
+```
 
 SUBSYSTEM -
 
