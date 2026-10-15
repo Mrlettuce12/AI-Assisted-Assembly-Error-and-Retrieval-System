@@ -117,3 +117,7 @@ python nlp_engine.py
 - Type a plain-language fault query (e.g., "bolt not tightened enough on gearbox").
 - View top 3 contextually matching records and past engineer fixes.
 
+# HAL ALH Dhruv Defect Management System [Live Demo] -
+
+**(https://alh-assembly-error-system.streamlit.app)**
+
