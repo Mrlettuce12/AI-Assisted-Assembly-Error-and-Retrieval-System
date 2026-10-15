@@ -83,12 +83,14 @@ System Log & Optimization Summary -
 How to Run the System -
 
 1. Launch the application interface:
-
+```bash
 streamlit run app.py
+```
 
 2. Test the NLP engine directly via CLI:
-
+```bash
 python nlp_engine.py
+```
 
 3. Log a Defect:
 
