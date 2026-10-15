@@ -1,0 +1,101 @@
+============================================================================
+ ASSEMBLY ERROR LOGGING & RETRIEVAL SYSTEM
+ ALH Final Assembly, HAL
+ SETUP INSTRUCTIONS
+============================================================================
+
+This project runs fully OFFLINE once set up. No internet connection is
+required to use the dashboard, search engine, or database after the
+one-time installation below.
+
+NOTE ON THIS EMAIL: Email systems often block .bat files as attachments
+for security reasons. If "Launch_Dashboard.bat" did not arrive as a
+separate attachment, instructions to recreate it are included in Step 4
+below — it only takes a few seconds to set up manually.
+
+
+STEP 1 — Install Python (skip if already installed)
+----------------------------------------------------------------------------
+  1. Download Python 3.10 or newer from:
+         https://www.python.org/downloads/
+  2. During installation, make sure to TICK the box that says
+     "Add Python to PATH" before clicking Install.
+  3. To verify installation, open Command Prompt and type:
+         python --version
+     It should show Python 3.10.x or higher.
+
+
+STEP 2 — Set up the project folder
+----------------------------------------------------------------------------
+  1. Extract/copy the project folder (received via email) to your
+     computer, e.g. to Desktop or Documents.
+
+  2. The folder must keep its internal structure exactly as provided,
+     including the Database, Requirements (with the models subfolder
+     inside it), and data folders. Do not rename or move any subfolders.
+
+
+STEP 3 — Install required libraries
+----------------------------------------------------------------------------
+  1. Open the project folder.
+  2. Open a Command Prompt INSIDE this folder:
+       - In File Explorer, click the address bar, type "cmd", press Enter.
+  3. Run ONE of the following two options:
+
+     Option A — if requirements.txt is present in the folder:
+         pip install -r requirements.txt
+
+     Option B — single copy-paste line (works even without the file):
+         pip install streamlit==1.58.0 sentence-transformers==5.5.1 torch==2.12.0 torchvision==0.27.0 transformers==5.10.2 tokenizers==0.22.2 scikit-learn==1.9.0 scipy==1.17.1 huggingface_hub==1.18.0 safetensors==0.7.0 pandas==3.0.3 numpy==2.4.6 openpyxl==3.1.5 pyarrow==24.0.0
+
+  4. Wait for the installation to complete (this may take 5-10 minutes
+     depending on internet speed). This step requires internet access
+     ONLY this one time, to download the libraries.
+
+
+STEP 4 — Launch the dashboard
+----------------------------------------------------------------------------
+  OPTION A — If Launch_Dashboard.bat was received:
+     Simply double-click it.
+
+  OPTION B — If the .bat file was blocked by email and not received:
+     1. Open Notepad.
+     2. Paste the following two lines exactly:
+
+            cd /d "%~dp0"
+            streamlit run app.py
+
+     3. Save the file as "Launch_Dashboard.bat" (select "All Files" as
+        the file type in Notepad's save dialog, not .txt) directly
+        inside the project folder.
+     4. Double-click the newly saved Launch_Dashboard.bat file.
+
+  Either way, a terminal window will open and the dashboard will
+  automatically launch in your default web browser at:
+
+         http://localhost:8501
+
+  From this point onward, the system works WITHOUT internet — the AI
+  model, database, and search engine all run locally on this machine.
+
+
+TROUBLESHOOTING
+----------------------------------------------------------------------------
+  - If double-clicking the .bat file shows "Python not found":
+      Re-check Step 1 — Python was not added to PATH during installation.
+      Reinstall Python and tick "Add Python to PATH".
+
+  - If it shows "No module named streamlit" or similar:
+      Re-run Step 3 — the pip install command did not complete fully.
+
+  - If the browser does not open automatically:
+      Manually open any browser and visit: http://localhost:8501
+
+  - To stop the dashboard:
+      Close the black terminal window, or press Ctrl+C inside it.
+
+
+============================================================================
+ Project developed as part of Internship -
+ ALH Final Assembly, HAL Helicopter Division
+============================================================================
