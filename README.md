@@ -4,7 +4,7 @@ Offline NLP-based defect logging and instant semantic retrieval system for aeros
 
 The objective is to replace friction-heavy, paper-and-spreadsheet defect logging with an institutional knowledge loop. The system uses localized deep learning models to log assembly snags, evaluate natural language descriptions, and instantly retrieve verified past corrective actions.
 
-REPOSITORY STRUCTURE -
+### REPOSITORY STRUCTURE -
 
 ```text
 ALH-Defect-Management/
@@ -19,7 +19,7 @@ ALH-Defect-Management/
 └── requirements.txt          # Python runtime dependencies
 ```
 
-SUBSYSTEM -
+### SUBSYSTEM -
 
 NLP & Vector Engine (nlp_engine.py)
 
@@ -99,6 +99,11 @@ streamlit run app.py
 ```bash
 python nlp_engine.py
 ```
+
+3. Key Modules:
+
+ * Main UI: [`app.py`](./app.py)
+* Search Engine: [`nlp_engine.py`](./nlp_engine.py)
 
 3. Log a Defect:
 
