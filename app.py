@@ -39,39 +39,7 @@ def init_db():
             Image BLOB
         )
     ''')
-
-    # Check if table is empty; if so, seed default records automatically
-    cursor.execute("SELECT COUNT(*) FROM assembly_errors")
-    if cursor.fetchone()[0] == 0:
-        seed_records = [
-            (str(date.today()), "AFCS-J4", "Incorrect Connector Mating",
-             "Connector plug mated to wrong port on avionics panel during final assembly.",
-             "Disengaged J4 harness, verified pin configuration against schematic, and re-routed to proper port.",
-             "TECH-01", "Resolved", None),
-            (str(date.today()), "MGB-B2", "Wrong Torque Value",
-             "Bolt on main gearbox mounting flange not tightened to required torque specifications.",
-             "Retorqued all MGB flange bolts to 45 Nm using calibrated torque wrench.",
-             "TECH-02", "Resolved", None),
-            (str(date.today()), "HYD-P1", "Reversed Polarity",
-             "Wire connected with wrong polarity on hydraulic pump motor terminals.",
-             "Swapped wire leads according to electrical harness manual specs.",
-             "TECH-03", "Resolved", None),
-            (str(date.today()), "FUEL-C3", "Missing Clamp",
-             "Clamp missing on fuel line near firewall causing minor line vibration.",
-             "Installed MS21919 cushion clamp and secured with standard mounting hardware.",
-             "TECH-01", "Resolved", None),
-            (str(date.today()), "ROTOR-H1", "Other",
-             "Safety wire missing on tail rotor hub attachment bolts.",
-             "Laced double-twist lockwire across all rotor hub retaining bolts.",
-             "TECH-04", "Resolved", None)
-        ]
-        cursor.executemany('''
-            INSERT INTO assembly_errors 
-            (Date, Component_Ref, Error_Type, Description, Corrective_Action, Technician_ID, Status, Image)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        ''', seed_records)
-        conn.commit()
-
+    conn.commit()
     conn.close()
 
 
