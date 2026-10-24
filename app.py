@@ -14,7 +14,18 @@ from openpyxl import Workbook
 from openpyxl.drawing.image import Image as OpenpyxlImage
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, 'alh_errors.db')
+
+# Check root directory first, then fallback to Database/ folder
+ROOT_DB = os.path.join(BASE_DIR, 'alh_errors.db')
+FOLDER_DB = os.path.join(BASE_DIR, 'Database', 'alh_errors.db')
+
+if os.path.exists(ROOT_DB):
+    DB_PATH = ROOT_DB
+elif os.path.exists(FOLDER_DB):
+    DB_PATH = FOLDER_DB
+else:
+    DB_PATH = ROOT_DB  # Default fallback
+
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 CACHE_PATH = os.path.join(BASE_DIR, 'vectors.pkl')
 
